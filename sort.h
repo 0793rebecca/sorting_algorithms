@@ -12,15 +12,6 @@
  */
 void print_array(const int *array, size_t size);
 
-#include <stdio.h>
-#include "sort.h"
-
-/**
- * print_list - Prints a list of integers
- *
- * @list: The list to be printed
- */
-void print_list(const listint_t *list);
 
 /**
   * struct listint_s - node of double linked list
@@ -33,7 +24,14 @@ typedef struct listint_s
 	int n;
 	struct listint_s *prev;
 	struct listint_s *next;
-} listint_s;
+} listint_t;
+
+/**
+ * print_list - Prints a list of integers
+ *
+ * @list: The list to be printed
+ */
+void print_list(const listint_t *list);
 
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
