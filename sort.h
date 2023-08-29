@@ -10,20 +10,7 @@
  * @array: The array to be printed
  * @size: Number of elements in @array
  */
-void print_array(const int *array, size_t size)
-{
-    size_t i;
-
-    i = 0;
-    while (array && i < size)
-    {
-        if (i > 0)
-            printf(", ");
-        printf("%d", array[i]);
-        ++i;
-    }
-    printf("\n");
-}
+void print_array(const int *array, size_t size);
 
 #include <stdio.h>
 #include "sort.h"
@@ -33,21 +20,20 @@ void print_array(const int *array, size_t size)
  *
  * @list: The list to be printed
  */
-void print_list(const listint_t *list)
-{
-    int i;
+void print_list(const listint_t *list);
 
-    i = 0;
-    while (list)
-    {
-        if (i > 0)
-            printf(", ");
-        printf("%d", list->n);
-        ++i;
-        list = list->next;
-    }
-    printf("\n");
-}
+/**
+  * struct listint_s - node of double linked list
+  * @prev: pointer to the previous element in the list
+  * @n: integer
+  * @next: pointer to the next element in the list
+  */
+typedef struct listint_s
+{
+	int n;
+	struct listint_s *prev;
+	struct listint_s *next;
+} listint_s;
 
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
