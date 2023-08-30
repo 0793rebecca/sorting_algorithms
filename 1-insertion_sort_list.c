@@ -27,7 +27,7 @@ void insertion_sort_list(listint_t **list)
 
 		if (l == NULL)
 		{
-			k->prev->n = temp;
+			l->prev->n = temp;
 		}
 
 		else
