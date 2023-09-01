@@ -21,7 +21,7 @@ void swap(int *k, int *l)
   * @highend: end point of an index in a partition
   * Return: the pivot's element's index after partition
   */
-int lomuto_part(int array,int lowend,int highend)
+int lomuto_part(int *array, int lowend, int highend)
 {
 	int pivot;
 	int start;
@@ -65,9 +65,9 @@ void quick_sortrec(int *array, int lowend, int highend)
 
 	if (lowend < highend)
 	{
-		loc = lomuto_part(int array, int lowend, int highend);
-		quick_sortrec(int *array, int lowend, int loc - 1);
-		quick_sortrec(int *array, loc + 1, highend);
+		loc = lomuto_part(array, lowend, highend);
+		quick_sortrec(array, lowend, loc - 1);
+		quick_sortrec(array, loc + 1, highend);
 	}
 }
 
@@ -76,10 +76,7 @@ void quick_sortrec(int *array, int lowend, int highend)
   * @array: array to sort
   * @size: array's size
   */
-void quick_sort(int *array, size_t, size)
+void quick_sort(int *array, size_t size)
 {
 	quick_sort(array, size - 1);
 }
-
-
-
